@@ -1,0 +1,194 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow-x: hidden; 
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #f5f5f5;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  box-sizing: border-box;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 20px;
+  display: block;
+  padding: 10px 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 10px 0;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 200px;
+  flex-grow: 1;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+header h1 {
+  text-align: center;
+}
+
+.task-panel {
+  margin-top: 20px;
+  width: 100%;
+  position: relative;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 10px;
+  z-index: 1;
+}
+
+.task-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  position: relative; 
+  overflow: hidden;
+}
+
+.task-cards {
+  display: flex;
+  justify-content: flex-start; 
+  scroll-behavior: smooth;
+  margin-left: 5%;
+  margin-right: 5%;
+  flex-shrink: 0; /*allow task cards to take up available space*/
+  gap: 20px;
+  white-space: nowrap;
+   /* hiding automatic scroll */
+  scrollbar-width: none; /* for Firefox  */
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute; /*relative*/
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/*settings for arrows */
+.left-arrow{
+  left: 0;
+}
+
+.right-arrow{
+  right: 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between; /* Keep icons spaced evenly */
+  margin-top: auto; /* Push the icons to the bottom */
+}
+
+/*making sidebar and header stable when adding tasks*/
+.sidebar, .task-header{
+flex-shrink: 0;
+}
+
+/**************calendar settings**********************/
+.calendar-container {
+  width: 95%;
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#month-year {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.prev-btn, .next-btn {
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.prev-btn:hover, .next-btn:hover {
+  background-color: #357abd;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+}
+
+.calendar-cell {
+  padding: 1rem;
+  background-color: #f9fafb;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: black;
+}
+
+.calendar-cell:hover {
+  background-color: #e4e7eb;
+}
+
+.calendar-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+  
+.task {
+  margin-top: 5px;
+  padding: 2px;
+  background-color: #E0F9B5;
+  border-radius: 3px;
+}
